@@ -1,0 +1,56 @@
+<h2>Ma liste de contacts</h2>
+<div class="d-flex justify-content-end mb-3">
+  <a href="/user/contact/new" class="btn btn-success">
+    <i class="fi fi-br-plus-small"></i>Nouveau Contact
+  </a>
+</div>
+<div>
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>IBAN</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contactslist">
+        <td>{{ contact.firstname }}</td>
+        <td>{{ contact.lastname }}</td>
+        <td >{{ contact.email}}</td>
+        <td >{{ contact.iban}}</td>
+        <td class="cursor-pointer">
+          <!-- <i class="fi fi-ss-edit text-primary"  (click)="modify(contact.id)"></i>
+          &nbsp;|&nbsp; -->
+          <i class="fi fi-ss-trash text-danger" data-bs-toggle="modal"
+           data-bs-target="#staticBackdrop"   (click)="deletecontact(contact.id)"  ></i>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Confirm!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Would you really want to delete this data?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" data-bs-dismiss="modal">
+          <em class="fas fa-times"></em>&nbsp;Cancel
+        </button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          <em class="fas fa-trash"></em>&nbsp;Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

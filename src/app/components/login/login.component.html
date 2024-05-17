@@ -1,0 +1,25 @@
+<div class="hero_area">
+    <section class="slider_section ">
+        <div class="container d-flex justify-content-center flex-column align-items-center">
+            <a routerLink="/" class="logo">
+                <span>CIGMA</span>Bank
+            </a>
+            <div class="dropdown">
+                <form class="px-4 py-3">
+                  <div class="form-group">
+                    <input   [(ngModel)]="email"    [ngModelOptions]="{standalone: true}"   
+                     type="email" class="form-control" placeholder="Adresse E-mail">
+                  </div>
+                  <div class="form-group">
+                    <input [(ngModel)]="password"    [ngModelOptions]="{standalone: true}"  
+                    type="password" class="form-control" placeholder="Mot de passe">
+                  </div>
+                  <button  (click)="onlogin()" type="submit" class="btn btn-primary btn-block">Connexion</button>
+                </form>
+                <div class="dropdown-divider"></div>
+                <!-- <a class="dropdown-item" routerLink="/recover-password">Mot de passe oublié ?</a> -->
+                <a class="dropdown-item" routerLink="/register">Nouveau par ici ? S'inscrire</a>
+            </div>
+        </div>
+    </section>
+</div>

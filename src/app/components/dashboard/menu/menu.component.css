@@ -1,0 +1,115 @@
+
+
+nav{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    background: #202020;
+    width: 280px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+    transition: left .5s ease-in-out;
+  }
+  nav .logo{
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  
+  nav .logo span{
+    color: var(--primary);
+  }
+  
+  nav a{
+    position: relative;
+    width: 100%;
+    color: #faf9fa;
+    font-size: 14px;
+    display: table;
+    padding: 10px;
+  }
+  a:hover {
+    background-color: #333;
+  }
+  nav li {
+    cursor: pointer;
+  }
+  nav .fi{
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 50px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+  }
+  nav .logout{
+    position: absolute;
+    bottom: 0;
+  }
+  
+.menu {
+    display: none;
+    z-index: 999;
+    transition: all .5s ease-in-out;
+  }
+  @media (max-width: 768px) {
+    nav{
+      left: -280px;
+    }
+    nav.open{
+      left: 0;
+    }
+    .menu {
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      display: flex;
+      background-color: #333;
+      top: 10px;
+      right: 10px;
+      border-radius: 5px;
+      align-items: center;
+      justify-content: center;
+    }
+    .menu span,.menu span::after,.menu span::before{
+      display: block;
+      width: 80%;
+      height: 3px;
+      border-radius: 2px;
+      background-color: #faf9fa;
+      transition: all .5s ease-in-out;
+    }
+    .menu span::after,.menu.active span::after{
+      content: "";
+      position: absolute;
+      bottom: 8px;
+    }
+    .menu span::before,.menu.active span::before{
+      content: "";
+      position: absolute;
+      top: 8px;
+    }
+    .menu.active span:nth-child(1){
+      background-color: transparent;
+    }
+    .menu.active span::after{
+      bottom: 18px;
+      transform: rotate(45deg);
+    }
+    .menu.active span::before{
+      top: 18px;
+      transform: rotate(-45deg);
+    }
+    .main_section {
+      position: absolute;
+    }
+  }

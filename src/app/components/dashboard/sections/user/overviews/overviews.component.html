@@ -1,0 +1,38 @@
+<h2>Dashboard</h2>
+<div class="card-group text-white">
+    <div class="card">
+        <div class="card-body bg-primary d-flex justify-content-center align-items-center">
+            <i class="fi fi-ss-dial-min"></i>
+            <div class="d-flex flex-column">
+                <span>min transaction</span>
+
+                <!-- {{infoUser[0].minTransfer}} -->
+                <span class="text-center"> {{ this.static[0].minTransfer}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body bg-primary d-flex justify-content-center align-items-center">
+            <i class="fi fi-ss-dial-max"></i>
+            <div class="d-flex flex-column">
+                <span>transaction maximum</span>
+                <!-- {{infoUser[0].maxTransfer}} -->
+                <span class="text-center">{{this.static[0].maxTransfer}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body bg-primary d-flex justify-content-center align-items-center">
+            <i class="fi fi-ss-sack-dollar"></i>
+            <div class="d-flex flex-column">
+                <span>Sold</span>
+
+                <!-- {{infoUser[0].Sold}} -->
+                <span class="text-center">{{this.static[0].Sold}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<canvas class="mt-3" id="Chart-user"></canvas> 
+
+

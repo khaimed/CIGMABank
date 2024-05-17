@@ -1,0 +1,76 @@
+
+<h2>Clients bancaires</h2>
+<div class="d-flex justify-content-end mb-3">
+  <div class="form-check form-switch">
+    <label [ngClass]="{'btn-primary': !isChecked, 'btn-secondary': isChecked}" class="btn form-check-label" for="flexSwitchCheckChecked"  (click)="unactiveuser()">les utilisateurs inactifs</label>
+    <input class="form-check-input d-none" type="checkbox" id="flexSwitchCheckChecked" (change)="toggleCheckbox()">
+  </div>
+</div>
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th>Cocher</th>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>IBAN</th>
+      <th>State</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let managerUser of managerUsers">
+    
+      <td >
+        <label class="switch">
+          <input type="checkbox" (change)="onCheckboxChange(managerUser.id)"
+          
+          [(ngModel)]="managerUser.active" [ngClass]="{'active': managerUser.active}">
+          <span class="slider round"></span>
+        </label>
+
+    
+        <!-- <div class="d-flex justify-content-center" (click)="test(managerUser.id)">
+          <label class="position-absolute fixed-top w-100 h-100 m-0" for="'{{ managerUser.firstname.trim() + managerUser.lastname.trim() }}'"></label>
+          <input type="checkbox" id="'{{ managerUser.firstname.trim() + managerUser.lastname.trim() }}'">
+        </div> -->
+      </td>
+      <td>{{ managerUser.firstname }}</td>
+      <td>{{ managerUser.lastname }}</td>
+      <td>{{ managerUser.userIban }}</td>
+      <td [ngClass]="{'bg-success': managerUser.active === true, 'bg-warning': managerUser.active === false}">
+        {{ managerUser.active ? 'Active' : 'Not Active' }}</td>
+      <td class="cursor-pointer">
+        &nbsp;|&nbsp;
+        <i class="fi fi-ss-trash text-danger"    (click)="deleteuser(managerUser.id)"             data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i>
+
+        <i class="fi fi-ss-sack-dollar  text-success  " (click)="emailNotification(managerUser.id)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></i>
+
+        <!-- <button  (click)="emailNotification(managerUser.id)">BBBBBBBBBBBB</button> -->
+      </td>
+  </tr>
+  </tbody>
+</table>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Confirm!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Would you really want to enable this user?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" data-bs-dismiss="modal">
+            <em class="fi fi-ss-time"></em>&nbsp;Cancel
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+            <em class="fi fi-ss-trash"></em>&nbsp;Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

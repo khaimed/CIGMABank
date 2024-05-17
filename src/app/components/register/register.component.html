@@ -1,0 +1,67 @@
+<div class="hero_area">
+    <section class="slider_section ">
+        <div class="container d-flex justify-content-center flex-column align-items-center">
+            <a href="#" class="logo">
+                <span>CIGMA</span>Bank
+            </a>
+            <div class="dropdown">
+                <form class="px-4 py-3">
+                    <div class="form-group">
+                        <input  [(ngModel)]="lastname"    [ngModelOptions]="{standalone: true}"    type="text" class="form-control" placeholder="Nom">
+                    </div>
+                    <div class="form-group">
+                        <input   [(ngModel)]="firstname"    [ngModelOptions]="{standalone: true}"     type="text" class="form-control" placeholder="Prénom">
+                    </div>
+                    <div class="form-group">
+                        <input        [(ngModel)]="email"    [ngModelOptions]="{standalone: true}"                    type="email" class="form-control" placeholder="Adresse E-mail">
+                    </div>
+                    <div class="form-group">
+                        <input  [(ngModel)]="password"    [ngModelOptions]="{standalone: true}"              type="password" class="form-control" placeholder="Mot de passe">
+                    </div>
+                    <div class="form-group">
+                        <input    [(ngModel)]="cnfpassword"    [ngModelOptions]="{standalone: true}"         type="password" class="form-control" placeholder="Confirmation mot de passe">
+                    </div>
+                    <div class="form-check mb-3">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                        <label class="form-check-label" for="dropdownCheck">
+                            J'ai lu <a class="condition" (click)="toggleConditionVisibility()" >les conditions</a> et j'accepte
+                        </label>
+                    </div>
+                    <div class="cigmabank-condition" *ngIf="isConditionVisible">
+                        <div class="head-condition"> <div class="title-condition">Les conditions de cigmabank</div> <div class="closebtn" (click)="closeCondition()"><span></span></div></div>
+                        <div class="container-condition">
+                        cigmabank est une banque privée renommée, et voici certaines conditions générales qui pourraient être requises pour y travailler. Cependant, veuillez noter que les exigences précises peuvent varier en fonction du poste et du pays :<br><br>
+
+                        Formation académique : cigmabank exige généralement un diplôme de premier cycle universitaire dans un domaine pertinent tel que la finance, l'économie, la comptabilité ou les affaires. Dans certains cas, un diplôme d'études supérieures peut être préféré.<br><br>
+
+                        Expérience professionnelle : Une expérience préalable dans le secteur bancaire, en particulier dans le domaine des services financiers privés, est souvent requise. Des postes de niveau débutant peuvent être disponibles pour les candidats prometteurs sans expérience, mais une expérience pertinente est généralement préférée pour des rôles plus avancés.<br><br>
+
+                        Certification et accréditation : Certaines certifications, telles que la certification CFA (Chartered Financial Analyst) ou une licence d'agent de valeurs mobilières, peuvent être requises ou préférées selon le poste.<br><br>
+
+                        Connaissances spécialisées : Une solide compréhension des produits et services financiers privés, de la gestion de patrimoine, de la planification financière et des stratégies d'investissement est essentielle. Les candidats doivent également avoir une connaissance approfondie des réglementations financières et des normes de conformité.<br><br>
+
+                        Compétences relationnelles : Travaillant avec des clients fortunés, les banquiers de cigmabank doivent posséder d'excellentes compétences en communication et en service à la clientèle. La capacité à établir et à maintenir des relations solides avec les clients, ainsi qu'à comprendre leurs besoins et à y répondre, est essentielle.<br><br>
+
+                        Intégrité et confidentialité : La confidentialité et le respect des normes éthiques sont primordiaux dans le secteur bancaire privé. Les employés de cigmabank doivent faire preuve d'intégrité professionnelle, de discrétion et de respect strict de la confidentialité des informations clients.<br><br>
+
+                        Compétences analytiques : Les banquiers de cigmabank doivent être en mesure d'analyser des données financières complexes, d'évaluer les risques et de formuler des recommandations d'investissement personnalisées pour les clients.<br><br>
+
+                        Maîtrise des langues : Étant donné que cigmabank peut avoir une clientèle internationale, la maîtrise d'une ou plusieurs langues étrangères peut être un avantage.<br><br>
+
+                        Ces conditions sont générales et peuvent être adaptées en fonction des besoins spécifiques de cigmabank. Pour obtenir des informations plus précises sur les exigences de cette banque, il est recommandé de consulter les offres d'emploi ou de contacter directement le service des ressources humaines de cigmabank.<br><br>
+                        </div>
+                    </div>
+                    <button  (click)="register()"       type="button" class="btn btn-primary btn-block">Inscrire</button>
+                </form>
+
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/login">Votre compte existe ? connectez-vous</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+

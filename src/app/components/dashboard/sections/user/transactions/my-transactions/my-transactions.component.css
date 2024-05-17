@@ -1,0 +1,103 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-wrap: break-word;
+  }
+  
+  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  table tr:hover {
+    background-color: #ddd;
+  }
+  
+  td {
+    position: relative;
+    min-height: 35px;
+    border: 1px solid #ccc;
+    line-height: 35px;
+    vertical-align: middle;
+    text-align: left;
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  td.amount {
+    font-weight: bold;
+  }
+  
+  td.amount.positive {
+    color: green;
+  }
+  
+  td.amount.negative {
+    color: red;
+  }
+  /* Responsive Styling */
+  @media screen and (max-width: 650px) {
+    thead {
+      display: none;
+    }
+  
+    table tr td {
+      display: block;
+      padding-bottom: 0;
+      padding-top: 0;
+      padding-left: 50%;
+      position: relative;
+      border: 0;
+    }
+    /* here add or remove cell you need to, and modify the content */
+    td:before {
+      position: absolute;
+      height: 100%;
+      width: 45%;
+      padding-left: 10px;
+      left: 0;
+      white-space: nowrap;
+    }
+    td:nth-child(1):before {
+        content: 'Date';
+    }
+    td:nth-child(2):before {
+        content: 'Description';
+    }
+    td:nth-child(3):before {
+        content: 'Montant';
+    }
+    /* here for row edition mobile */
+    table tr:hover {
+      background-color: #ddd;
+    }
+  
+    tr:nth-child(n) td:before:hover {
+      background-color: red;
+    }
+  
+    tr:nth-child(2n) td:before:hover {
+      background-color: #ddd;
+    }
+  
+    tr:nth-child(n) td:before {
+      background-color: #1e1e1e;
+    }
+  
+    tr:nth-child(2n) td:before {
+      background-color: #444444;
+    }
+  
+    tr:nth-child(n) td:before,
+    tr:nth-child(2n) td:before {
+      color: white;
+    }
+  }
+  

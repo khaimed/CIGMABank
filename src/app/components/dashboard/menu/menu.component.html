@@ -1,0 +1,56 @@
+<nav>
+    <ul>
+        <li>
+            <a class="logo d-flex justify-content-center">
+            <span>CIGMA</span>Bank
+            </a>
+        </li>
+        <li *ngIf="role === 'user'">
+            <!-- add role bro -->
+            <a routerLink="/user">
+                <i class="fi fi-ss-dashboard"></i>
+                <span class="nav-item">Dashboard</span>
+            </a>
+        </li>
+        <li  *ngIf="role === 'admin'">
+            <!-- add role bro -->
+            <a routerLink="/admin">
+                <i class="fi fi-ss-dashboard"></i>
+                <span class="nav-item">Dashboard</span>
+            </a>
+        </li>
+        <li *ngIf="role === 'admin'">
+            <a routerLink="/admin/customers">
+                <i class="fi fi-ss-users-alt"></i>
+                <span class="nav-item">Clients</span>
+            </a>
+        </li>
+        <li   *ngIf="role === 'user'">
+            <a routerLink="/user/transactions">
+                <i class="fi fi-ss-exchange"></i>
+                <span class="nav-item">Transactions</span>
+            </a>
+        </li>
+        <li  *ngIf="role === 'user'">
+            <a routerLink="/user/contact">
+                <i class="fi fi-ss-address-book"></i>
+                <span class="nav-item">Contact</span>
+            </a>
+        </li>
+        <li>
+          <a routerLink="/profile">
+            <i class="fi fi-ss-user"></i>
+                <span class="nav-item">{{fullname}}</span>
+          </a>
+      </li>
+        <li>
+            <a href="" class="logout">
+                <i class="fi fi-ss-exit"></i>
+                <span class="nav-item">Se déconnecter</span>
+            </a>
+        </li>
+    </ul>
+  </nav>
+  <div class="menu"><span></span></div>
+
+

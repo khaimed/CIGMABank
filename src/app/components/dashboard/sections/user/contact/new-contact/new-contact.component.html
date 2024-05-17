@@ -1,0 +1,34 @@
+<div class="p-3">
+    <h2>New contact</h2>
+    <!-- *ngIf="errorMessages.length" -->
+    <!-- <div class="alert alert-danger" role="alert">
+      <p > </p>
+    </div> -->
+    <div class="card p-3">
+      <div class="mb-3">
+        <label for="firstname" class="form-label">Firstname</label>
+        <input    [(ngModel)]="firstname"    [ngModelOptions]="{standalone: true}"        type="text" class="form-control" id="firstname" placeholder="Enter Firstname">
+      </div>
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Lastname</label>
+        <input    [(ngModel)]="lastname"    [ngModelOptions]="{standalone: true}"          type="text" class="form-control" id="lastname" placeholder="Enter Lastname">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input    [(ngModel)]="email"    [ngModelOptions]="{standalone: true}"           type="email" class="form-control" id="email" placeholder="Enter Email">
+      </div>
+      <div class="mb-3">
+        <label for="iban" class="form-label"    >IBAN</label>
+        <input    [(ngModel)]="iban"    [ngModelOptions]="{standalone: true}"      type="text" class="form-control" id="iban" placeholder="Enter IBAN (e.g., AB12 1234 1234 1234 00)">
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-link">
+          <i class="fi fi-ss-time"></i>&nbsp;Cancel
+        </button>
+        <button  (click)="addcontact()"  type="button" class="btn btn-danger">
+          <i class="fi fi-ss-save"></i>&nbsp;Save
+        </button>
+      </div>
+    </div>
+  </div>
+  
