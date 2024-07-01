@@ -33,10 +33,10 @@ This project is a web application developed for CIGMABank as part of a graduatio
 
 ### Prerequisites
 
-- Node.js
-- Angular CLI
-- .NET Core SDK
-- SQL Server
+- [Node.js](https://nodejs.org/en/download/package-manager/current)
+- [Angular CLI](https://v17.angular.io/cli)
+- [.NET Core SDK](https://dotnet.microsoft.com/en-us/download)
+- [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
 ### Steps
 
